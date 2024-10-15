@@ -10,6 +10,8 @@ import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Todolist from './src/component/Todolist';
+import TodoAgain from './src/component/TodoAgain';
+import AvoidView from './src/component/AvoidView';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -19,13 +21,16 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={[backgroundStyle, {flex:1,}]}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <Todolist/>
+      {/* <Todolist/>
+      <TodoAgain/> */}
+      <AvoidView/>
     </SafeAreaView>
+
     
   );
 }

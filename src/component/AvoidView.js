@@ -7,11 +7,19 @@ import {
     View,
     KeyboardAvoidingView,
     ImageBackground,
+    Button,
+    Alert,
   } from 'react-native';
   const img = require('../Image/raibow2.jpg')
 const AvoidView = () => {
+
+const buttonFun =()=>{
+  Alert.alert('Hello Button')
+}
+
+
   return (
-  
+
   <View style={{flex: 1, }}>
       <ImageBackground
         style={{
@@ -43,7 +51,22 @@ const AvoidView = () => {
             <Text style={{alignSelf: 'center', fontWeight: 'bold'}}>
               Click Me
             </Text>
+        
           </TouchableOpacity>
+
+{/* New oct 16 */}
+<Button
+          title="Right button"
+          //first -no function
+          // onPress={() => Alert.alert('Right button pressed')
+//second way - with function
+          onPress={buttonFun}
+
+       
+        />
+
+
+
           <Text style={{alignSelf: 'center', marginVertical: 10}}>
             Forget Password
           </Text>

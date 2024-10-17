@@ -1,45 +1,61 @@
-import React from 'react'
+import {position} from '@chakra-ui/react';
+import {color} from 'framer-motion';
+import React from 'react';
 import {
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
-    KeyboardAvoidingView,
-    ImageBackground,
-    Button,
-    Alert,
-  } from 'react-native';
-  const img = require('../Image/raibow2.jpg')
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+  KeyboardAvoidingView,
+  ImageBackground,registerCallableModule
+  // Alert,
+
+} from 'react-native';
+// import Icon from 'react-native-vector-icons/FontAwesome';
+
+import { Icon } from 'react-native-elements';
+
+
+
+// import Icon from 'react-native-vector-icons/MaterialIcons';
+
+const img = require('../Image/raibow2.jpg');
 const AvoidView = () => {
-
-const buttonFun =()=>{
-  Alert.alert('Hello Button')
-}
-
+  const buttonFun = () => {
+    Alert.alert('Hello Button');
+  };
 
   return (
-
-  <View style={{flex: 1, }}>
+    <View style={{flex: 1}}>
       <ImageBackground
         style={{
           flex: 1,
-          justifyContent:'flex-end',
+          justifyContent: 'flex-end',
         }}
         resizeMode="cover"
         source={img}>
+        {/* icon*/}
+        <View style={{position: 'absolute', top: 50, left: 50, zIndex: 100}}>
+  {/* <Icon name="facebook" size={50} color="blue" />
+   */}
+   <Icon name="rocket" type="font-awesome" color="#900" />
+   
+    {/* <IconButton icon="rocket" size={30} color="#900" /> */}
 
-            {/* wrap 3 input */}
-            <KeyboardAvoidingView behavior='padding'
-            style={{
-                flex: 0.5,   
-                backgroundColor: 'orange',
-                alignItems: 'center',
-                justifyContent: 'center',
-                position:'absolute',
-                width:'100%'
-              }}>
-      
+</View>
+
+        {/* wrap 3 input */}
+        <KeyboardAvoidingView
+          behavior="padding"
+          style={{
+            flex: 0.5,
+            backgroundColor: 'orange',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'absolute',
+            width: '100%',
+          }}>
           <TextInput style={styles.styleInputBoxButton} placeholder="Email" />
 
           <TextInput
@@ -51,26 +67,20 @@ const buttonFun =()=>{
             <Text style={{alignSelf: 'center', fontWeight: 'bold'}}>
               Click Me
             </Text>
-        
           </TouchableOpacity>
 
-{/* New oct 16 */}
-<Button
-          title="Right button"
-          //first -no function
-          // onPress={() => Alert.alert('Right button pressed')
-//second way - with function
-          onPress={buttonFun}
-
-       
-        />
-
-
+          {/* New oct 16 */}
+          {/* <Button
+            title="Right button"
+            //first -no function
+            // onPress={() => Alert.alert('Right button pressed')
+            //second way - with function
+            onPress={buttonFun}
+          /> */}
 
           <Text style={{alignSelf: 'center', marginVertical: 10}}>
             Forget Password
           </Text>
-   
         </KeyboardAvoidingView>
       </ImageBackground>
     </View>
@@ -94,5 +104,4 @@ const styles = StyleSheet.create({
   },
 });
 
-
-export default AvoidView
+export default AvoidView;
